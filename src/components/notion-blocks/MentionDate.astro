@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-iconify';
+import {textToAstroIcon} from "../../lib/style-helpers.ts";
+
+export interface Props {
+	mention_date: string;
+}
+
+const { mention_date } = Astro.props;
+const text = "🗓️";
+const icon_name = textToAstroIcon(text);
+---
+{
+  icon_name
+    ? <Icon name={icon_name} class="inline h-5 w-5" />
+    : text
+} {' '+mention_date}

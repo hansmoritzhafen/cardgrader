@@ -1,0 +1,9 @@
+---
+export interface Props {
+	url: URL;
+  caption: string | undefined;
+}
+
+const { url, caption } = Astro.props;
+---
+<iframe class="spotify-embed border-none lazyload max-w-full" style="border-radius:12px" data-src={url.toString()} width="100%" height="152"allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
